@@ -40,9 +40,9 @@ def room_2_questions(ls, question, correct, hp, inventory):
     print(('1 {:' + longest_Element + 's} \t2 {:' + longest_Element + 's} \n3 {:' + longest_Element + 's} \t4 {:' + longest_Element + 's}').format(ls[0], ls[1], ls[2], ls[3]))
     
     ## First answer
-    user_input = str(input("Type correct number, or type x to exit: "))                    
+    user_input = str(input("Type correct number, or type x to quit game: "))                    
 
-    ## While input is not X, the letter for exit
+    ## While input is not X, the letter for quit game
     while user_input != 'x' and user_input != 'CORRECT':
         ## Checking the string is a non-decimal number or not
         if user_input.isdigit():                    
@@ -72,22 +72,22 @@ def room_2_questions(ls, question, correct, hp, inventory):
                     user_input = input("Ouch! You lost 1 HP due to a wrong answer. Please enter the correct answer: ")      
             else:
                 ## When the input is a number but not 1, 2, 3, or 4
-                user_input = input("Please enter 1, 2, 3, or 4, or x to exit: ")                    
+                user_input = input("Please enter 1, 2, 3, or 4, or x to quit game: ")                    
         else:
             ## When input is not a number or X.
-            user_input = input("Please enter 1, 2, 3, or 4, or x to exit: ")                        
+            user_input = input("Please enter 1, 2, 3, or 4, or x to quit game: ")                        
     if user_input != 'x':
         user_input = ''
     return hp, inventory, user_input
 
 def room_2(player_hp, player_inv):
-  user_input = ''                                   ## This is just the input variable, for exiting when x is entered
+  user_input = ''                                   ## This is just the input variable, for quitting game when x is entered
   item_chosen = False
   message_item = ''
 
   room_2_intro()
 
-  user_input = input('Press any key to proceed, or x to exit: ')
+  user_input = input('Press any key to proceed, or x to quit game: ')
   print('\n')
 
   if user_input != 'x' and player_hp > 0:
@@ -140,7 +140,7 @@ def room_2(player_hp, player_inv):
 
           player_inv.append(message_item)
           print('\n')
-          user_input = input('Press any key to proceed, or x to exit: ')
+          user_input = input('Press any key to proceed, or x to quit game: ')
           if user_input != 'x':
               message_to_print = '\nBetween you and the next puzzle room is a series of dark rooms which you must get through.'
               print_out_slowly(message_to_print)

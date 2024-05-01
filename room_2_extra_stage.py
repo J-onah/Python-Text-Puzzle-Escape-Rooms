@@ -401,7 +401,7 @@ def room_2_dark_rooms(player_hp, inventory):
     box_letters = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D']  ## 2 Letters for shuffling
 
     ### ALL THE INITIALISING VARIABLES
-    user_input = input('Press any key to proceed, or x to exit: ')
+    user_input = input('Press any key to proceed, or x to quit game: ')
     to_continue = True
     hide = False
     search = False
@@ -483,7 +483,7 @@ def room_2_dark_rooms(player_hp, inventory):
                         player_hp += edible_healthpack
             item_found = 0
 
-            options_message = "Please enter the next room number to enter the room, \ns to stay, h to hide, or x to exit: "
+            options_message = "Please enter the next room number to enter the room, \ns to stay, h to hide, or x to quit game: "
             user_input = input(options_message)
             if user_input != '1' and user_input != '2' and user_input != '3' and user_input != '4' and user_input != 'x' and user_input != 'h' and user_input != 's':
                 while user_input != '1' and user_input != '2' and user_input != '3' and user_input != '4' and user_input != 'x' and user_input != 'h' and user_input != 's':
@@ -500,7 +500,7 @@ def room_2_dark_rooms(player_hp, inventory):
                 ## Hide Section
                 if user_input == 'h':
                     while user_input != 'x' and user_input != 'UN-HIDE' and closeness != -1:
-                        options_message = 'Please enter the letter of the box to hide in, h to no longer hide, and x to exit: '
+                        options_message = 'Please enter the letter of the box to hide in, h to no longer hide, and x to quit game: '
                         box_hidden = input(options_message)
                         if box_hidden == 'x':
                             user_input = 'x'
@@ -529,7 +529,7 @@ def room_2_dark_rooms(player_hp, inventory):
                                                 message_to_print = "\nYou decided to stay...\n"
                                                 print_out_slowly(message_to_print)
 
-                                        options_message = "Please enter s to stay, h to no longer hide, and x to exit: "
+                                        options_message = "Please enter s to stay, h to no longer hide, and x to quit game: "
                                         user_input = input(options_message)
                                         while  user_input != 's' and user_input != 'h' and user_input != 'x':    
                                             # Loop till a correct option is entered
@@ -570,7 +570,7 @@ def room_2_dark_rooms(player_hp, inventory):
         print_out_slowly(message_to_print)
 
         user_input = ''
-        user_input = input('To proceed, enter any key, or enter x to exit: ')
+        user_input = input('To proceed, enter any key, or enter x to quit game: ')
         user_input = user_input.lower()
 
         print('')
