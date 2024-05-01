@@ -1,4 +1,4 @@
-# Game of Text Escape Rooms
+# Game of Text Puzzle Escape Rooms
 ### Python Game Project Submission for Computational Thinking for Design Module 2020
 8 December 2020 
 
